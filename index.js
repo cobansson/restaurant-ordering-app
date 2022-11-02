@@ -2,56 +2,46 @@ import { menuArray } from "./data.js";
 
 
 const menuContainer = document.getElementById("menu-container");
-const orderContainer = document.getElementById("order-container");
+let yourOrderArray = [];
+
 
 document.addEventListener("click", function(e) {
     if(e.target.dataset.add) {
-        getMatchingFoodObject(e.target.dataset.add);
+        handleOrderInput(e.target.dataset.add);
     }
 })
 
-function getMatchingFoodObject(foodId) {
-    const foodObject = menuArray.filter(function(food) {
+function handleOrderInput(foodId) {
+    const OrderedFoodObject = menuArray.filter(function(food) {
         return food.uuid === foodId;
     })[0];
-    return foodObject;
-}
 
-function getOrderList() {
-    let orderList = ``;
+    yourOrderArray.push({
+       name: OrderedFoodObject.name,
+       price: OrderedFoodObject.price,
+       uuid: OrderedFoodObject.uuid
+    })
 
-    menuArray.forEach(function(food) {
-        orderList +=
+    let yourOrderHtml = ``;
+    yourOrderArray.forEach(order => {
+        return yourOrderHtml +=
         `
-        <div class="hidden order-container" id="order-container">
-            <h2>Your order</h2>
-            <div class="order-list" id="order-list">
-                <h6>${food.name}</h6>
-                <div class="price">
-                    <button class="remove-btn">remove</button>
-                    <h6>€${food.price}</h6>
-                </div>
-            </div>
-            <div class="strip-border"></div>
-                <div class="total-price">
-                    <h6>Total price:</h6>
-                    <h6>24</h6>
-                </div>
-                <div class="button-container">
-                    <button class="complete-btn">Complete order</button>
-                </div>
+            <h6>${order.name}</h6>
+            <div class="price">
+                <button class="remove-btn">remove</button>
+                <h6>€${order.price}</h6>
             </div>
         </div>
         `
     })
-    return orderList;
+    document.getElementById("order-list").innerHTML = yourOrderHtml;
+    render();
 }
 
 function getFoodList() {
-    
     let foodList = ``;
 
-    menuArray.forEach(function(food) {
+    menuArray.forEach(food => {
         foodList +=
         `
         <div class="menu-list" id="menu-list">
@@ -76,7 +66,6 @@ function getFoodList() {
 
 function render() {
     menuContainer.innerHTML = getFoodList();
-    orderContainer.innerHTML = getOrderList();
 }
 
 render();
