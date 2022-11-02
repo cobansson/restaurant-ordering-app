@@ -19,13 +19,13 @@ function handleOrderInput(foodId) {
     yourOrderArray.push({
        name: OrderedFoodObject.name,
        price: OrderedFoodObject.price,
-       uuid: OrderedFoodObject.uuid
-    })
+    });
 
     let yourOrderHtml = ``;
     yourOrderArray.forEach(order => {
         return yourOrderHtml +=
         `
+        <div class="order-list" id="order-list">
             <h6>${order.name}</h6>
             <div class="price">
                 <button class="remove-btn">remove</button>
@@ -34,7 +34,8 @@ function handleOrderInput(foodId) {
         </div>
         `
     })
-    document.getElementById("order-list").innerHTML = yourOrderHtml;
+    document.getElementById("order-container").classList.remove("hidden");
+    document.getElementById("order-list").innerHTML = yourOrderArray;
     render();
 }
 

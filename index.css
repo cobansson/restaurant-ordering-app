@@ -54,10 +54,19 @@ img {
     border: #3C3C3C 1px solid;
 }
 
-.header-picture, .menu-container, .order-container {
+.header-picture {
     width: 600px;
     height: 400px;
     margin: 40px auto;
+}
+
+.menu-container, .order-container {
+    width: 600px;
+    margin: 40px auto;
+}
+
+.order-container {
+    position:sticky;
 }
 
 .header-picture {
