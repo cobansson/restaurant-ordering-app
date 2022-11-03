@@ -6,27 +6,94 @@ const menuContainer = document.getElementById("menu-container");
 const orderContainer = document.getElementById("order-container");
 const totalPrice = document.getElementById("total-price");
 const listFood = document.getElementById("list-food");
+const paymentContainer = document.getElementById("payment-container");
+const formPayment = document.getElementById("form-payment");
+const innerModal = document.getElementById("inner-modal");
+
 let yourOrderArray = [];
 
+formPayment.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const personalInfo = new FormData(formPayment);
+    const name = personalInfo.get("fullName");
+
+    document.getElementById("inner-modal").innerHTML =
+    `
+    <div class="first-message">Thank you so much for your order</div>
+    <div class="second-message">${name}</div>!
+    <div class="third-message">Your order is being processed!</div>
+    `
+
+
+    setTimeout(function() {
+        orderContainer.innerHTML =`<div class="final-message">Your order is on its way <span>${name}</span>! Enjoy your meal!</div>`
+    }, 10*1000);
+});
 
 document.addEventListener("click", function(e) {
-    if(e.target.dataset.add) {
+    if (e.target.dataset.add) {
         handleOrderInput(e.target.dataset.add);
-    } else if(e.target.dataset.delete) {
+    } else if (e.target.dataset.delete) {
         handleDeleteButton(e.target.dataset.delete);
+    } else if (e.target.id === "complete-btn") {
+        handlePaymentButton();
+    } else if (e.target.id === "close-container-btn") {
+        closeContainerBtn();
     }
 })
+
+function handlePaymentButton() {
+    paymentContainer.classList.remove("hidden");
+}
+
+
+function closeContainerBtn() {
+    paymentContainer.classList.add("hidden");
+}
 
 function handleDeleteButton(targetId) {
     const deletedOrder = yourOrderArray.filter((order) => {
         return order.uuid === targetId;
     })[0];
-    
+
     for (let i = 0; i < yourOrderArray.length; i++) {
         if (yourOrderArray[i] === deletedOrder) {
             yourOrderArray.splice(i, 1);
         }
     }
+
+    if (yourOrderArray.length === 0) {
+        orderContainer.classList.add("hidden");
+    }
+
+    let orderList = "";
+
+    yourOrderArray.forEach((order) => {
+
+        orderList +=
+        `
+        <li class="" id="list-${order.uuid}">
+            <div class="order-list" id="order-list">
+                <h6>${order.name}</h6>
+                <div class="price">
+                    <button class="remove-btn" data-delete="${order.uuid}">remove</button>
+                    <h6>€${order.price}</h6>
+                </div>
+            </div>
+        </li>
+        `
+    })
+    listFood.innerHTML = orderList;
+
+    // This section renders the total price //
+
+    let SumPrice = 0;
+
+    yourOrderArray.forEach((order) => {
+        SumPrice += order.price
+    })
+    totalPrice.textContent = "€" + SumPrice;
+
     render();
 }
 
@@ -72,8 +139,8 @@ function handleOrderInput(foodId) {
 
     let SumPrice = 0;
 
-    yourOrderArray.forEach((price) => {
-        SumPrice += price.price
+    yourOrderArray.forEach((order) => {
+        SumPrice += order.price
     })
     totalPrice.textContent = "€" + SumPrice;
 

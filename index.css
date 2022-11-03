@@ -48,6 +48,25 @@ ul {
     padding-left: 0px;
 }
 
+form {
+    text-align: center;
+}
+
+input {
+    width: 475px;
+    height: 50px;
+    padding-left: 20px;
+    margin-top: 20px;
+    border: #757575 solid 1.5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+    color: fuchsia;
+}
+
 .food-name {
     text-align: left;
 }
@@ -160,3 +179,83 @@ ul {
     justify-content:space-between;
 }
 
+.payment-container {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 524px;
+    height: 450px;
+    border: none;
+    border-radius: 5px;
+    background-image: url("images/restaurant.jpg");
+    background-position: center; 
+    box-shadow: rgba(53, 51, 51, 0.8) 0 0 60px;
+}
+
+.payment-header {
+    padding-top: 40px;
+    padding-left: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.payment-btn {
+    width: 500px;
+    margin-top: 50px;
+    height: 50px;
+    background-color:#16DB99;
+    border: none;
+    border-radius: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.close-container-btn {
+
+    border: none;
+    font-size: 25px;
+    background:none;
+    position:absolute;
+    top:0;
+    right:0;
+    color: rgb(208, 255, 0);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.first-message {
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-align: center;
+}
+
+.second-message {
+    margin-top: 20px;
+    color: rgb(138, 255, 206);
+    font-size: 60px;
+    text-align: center;
+}
+
+.third-message {
+    margin: 60px auto;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-align: center;
+}
+
+.final-message {
+    height: 150px;
+    margin: 60px auto;
+    color: #065F46;
+    background-color: antiquewhite;
+    font-size: 45px;
+    text-align: center;
+}
