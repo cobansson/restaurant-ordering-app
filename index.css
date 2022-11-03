@@ -38,6 +38,14 @@ h6 {
 img {
     width: 150px;
     border-radius: 20%;
+    padding-right: 20px;
+}
+
+ul {
+    list-style-type: none;
+    display: block;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 .food-name {
@@ -66,8 +74,8 @@ img {
 }
 
 .order-container {
-    position:sticky;
-}
+    position: sticky;
+  }
 
 .header-picture {
     background: url("images/restaurant.jpg");
@@ -89,8 +97,14 @@ img {
     justify-content: space-between;
 }
 
+.firstPart {
+    display: flex;
+}
+
 .food-container {
     margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu-list {
