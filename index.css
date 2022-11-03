@@ -218,15 +218,14 @@ span {
 }
 
 .close-container-btn {
-
+    margin: 10px 10px;
     border: none;
-    font-size: 25px;
     background:none;
     position:absolute;
     top:0;
     right:0;
     color: rgb(208, 255, 0);
-    font-size: 40px;
+    font-size: 30px;
     cursor: pointer;
 }
 

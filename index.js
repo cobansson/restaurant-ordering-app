@@ -23,8 +23,9 @@ formPayment.addEventListener("submit", function(e) {
     <div class="second-message">${name}</div>!
     <div class="third-message">Your order is being processed!</div>
     `
-
-
+    document.querySelectorAll('button').forEach((elem)  => {
+        elem.disabled = true;
+    })
     setTimeout(function() {
         orderContainer.innerHTML =`<div class="final-message">Your order is on its way <span>${name}</span>! Enjoy your meal!</div>`
     }, 10*1000);
