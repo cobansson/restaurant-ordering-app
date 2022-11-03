@@ -17,15 +17,13 @@ formPayment.addEventListener("submit", function(e) {
     const personalInfo = new FormData(formPayment);
     const name = personalInfo.get("fullName");
 
-    document.getElementById("inner-modal").innerHTML =
+    innerModal.innerHTML =
     `
     <div class="first-message">Thank you so much for your order</div>
     <div class="second-message">${name}</div>!
     <div class="third-message">Your order is being processed!</div>
     `
-    document.querySelectorAll('button').forEach((elem)  => {
-        elem.disabled = true;
-    })
+
     setTimeout(function() {
         orderContainer.innerHTML =`<div class="final-message">Your order is on its way <span>${name}</span>! Enjoy your meal!</div>`
     }, 10*1000);
@@ -45,6 +43,10 @@ document.addEventListener("click", function(e) {
 
 function handlePaymentButton() {
     paymentContainer.classList.remove("hidden");
+    
+    document.querySelectorAll('button').forEach((elem)  => {
+        elem.disabled = true;
+    })
 }
 
 
