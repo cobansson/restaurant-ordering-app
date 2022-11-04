@@ -52,6 +52,10 @@ function handlePaymentButton() {
 
 function closeContainerBtn() {
     paymentContainer.classList.add("hidden");
+
+    document.querySelectorAll('button').forEach((elem) => {
+        elem.disabled = false;     
+    })
 }
 
 function handleDeleteButton(targetId) {
