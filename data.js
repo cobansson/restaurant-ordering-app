@@ -1,26 +1,46 @@
-export const menuArray = [
+export { mealArray }
+export { drinkArray }
+
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
+const mealArray = [
     {
         name: "Pizza",
-        ingredients: ["pepperoni", "mushroom", "mozarella"],
-        image: "/images/pepperonipizza.png",
-        alt: "Pepperoni mushroom mozarella pizza",
-        price: 14,
-        uuid: '4b161eee-c0f5-4545-9c4b-8562346223ee'
+        price: 12,
+        image: "images/pepperoni-pizza.png",
+        uuid: uuidv4()
     },
     {
-        name: "Hamburger",
-        ingredients: ["beef", "cheese", "lettuce"],
-        image: "/images/hamburger.jpg",
-        alt: "Hamburger with egg, beef patty, onion, lettuce, cheese",
-        price: 12,
-        uuid: '3c23454ee-c0f5-9g9g-9c4b-74895ghs2'
+        name: "Cheeseburger",
+        price: 8,
+        image: "images/cheeseburger.webp",
+        uuid: uuidv4()
     },
+    {
+        name: "French Fries",
+        price: 4,
+        image: "images/french-fries.png",
+        uuid: uuidv4()
+    }
+]
+
+const drinkArray = [
     {
         name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
-        image: "/images/beer.png",
-        alt: "A glass of beer",
-        price: 3,
-        uuid: '8hy671sff-c0f5-4565-9c4b-1237wrps39'
+        price: 4,
+        image: "images/beer.png",
+        uuid: uuidv4()
+    },
+    {
+        name: "Coca Cola",
+        price: 1.75,
+        image: "images/cocacola.png",
+        uuid: uuidv4()
+    },
+    {
+        name: "Fanta",
+        price: 1.75,
+        image: "images/fanta.png",
+        uuid: uuidv4()
     }
 ]

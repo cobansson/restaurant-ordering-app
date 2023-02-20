@@ -1,260 +1,400 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Smythe', cursive;
+    font-family: 'Rubik', sans-serif;
     background-color: antiquewhite;
 }
 
 h2 {
-    color: #000000;
-    font-size: 26px;
-    margin-top: 10px;
-    text-align: center;
+    font-size: 2rem;
+    color: #ff8c00;
 }
 
-h3 {
-    color: #FFFFFF;
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-h4 {
-    color: #FFFFFF;
-    font-size: 24px;
-    margin-top: 10px;
-}
-
-h5 {
-    font-size: 25px;
-    margin: 0;
-    text-align: center;
-}
-
-h6 {
-    font-size: 25px;
-    margin: 0;
-}
-
-img {
-    width: 150px;
-    border-radius: 20%;
-    padding-right: 20px;
+p {
+    margin: 0.2em;
+    padding: 0;
+    font-size: 1.2rem;
 }
 
 ul {
+    display: flex;
     list-style-type: none;
-    display: block;
-    margin-left: 0px;
-    padding-left: 0px;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
 }
 
-form {
+li button {
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li button:hover {
+    background-color: #ff8c00;
+    color: white;
+}
+
+li button:active {
+    background-color: #ffa600;
+    color: white;
+}
+
+button {
+    font-family: 'Rubik', sans-serif;
+}
+
+i:hover {
+    cursor: pointer;
+    color: #1500ff;
+}
+
+.nav-bar:hover {
+    color:#ff8c00;
+}
+
+.header-text  {
+    font-size: 2.5rem;
+}
+
+.header-text,
+.header-span {
+    margin: 0;
+    color: #ff8c00;
+}
+
+.header {
+    background-color: #f0f0f0;
+    margin: 0 auto;
+    padding: 3em 3em;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px -8px gray;
+}
+
+.nav-bar {
+    color: #3f3d38;
+    font-size: 1.6em;
+    margin-right: 2em;
+}
+
+.nav-list {
+    display: none;
+    position: absolute;
+    top: 110px;
+    right: 85px;
+}
+
+.reveal {
+    display: block;
+}
+
+.highlight-name {
+    color: #ff8c00;
+}
+
+.header-span {
+    font-weight: 300;
+}
+
+.main {
+    position: relative;
+    font-size: 0.8rem;
+    margin: 0 auto;
     text-align: center;
 }
 
-input {
-    width: 475px;
-    height: 50px;
-    padding-left: 20px;
-    margin-top: 20px;
-    border: #757575 solid 1.5px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-span {
-    color: fuchsia;
-}
-
-.food-name {
-    text-align: left;
-}
-
-.add-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 25px;
-    background-color: #ffffff;
-    opacity: 60%;
-    border: #3C3C3C 1px solid;
-}
-
-.header-picture {
-    width: 600px;
-    height: 400px;
-    margin: 40px auto;
-}
-
-.menu-container, .order-container {
-    width: 600px;
-    margin: 40px auto;
-}
-
-.order-container {
-    position: sticky;
-  }
-
-.header-picture {
-    background: url("images/restaurant.jpg");
+.image-section {
+    margin: 0 auto;
+    width: 100%;
+    height: 430px;
+    background:url("images/street-food-big-burger-with-beer-wooden-background_220925-13954.webp");
     background-size: cover;
-    border-radius: 10px;
+    -webkit-filter: blur(6px);
 }
 
-.header-text {
-    padding-top: 80px;
-    padding-left: 25px;
-}
-
-.food-details {
-    padding: 0;
-}
-
-.food-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.firstPart {
-    display: flex;
-}
-
-.food-container {
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.menu-list {
-    border-bottom: 2px solid #8B8B8B;
-}
-
-.hidden {
-    display: none;
-}
-
-.remove-btn {
-    border: none;
-    background: none;
-    font-size: 15px;
-    color: #8B8B8B;
-    padding: 0;
-}
-
-.order-list {
-    width: 600px;
-    margin-bottom: 10px;
-    display: flex;
-}
-
-.price {
-    margin-left: 10px;
-    width: 590px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-container {
-    margin-top: 40 auto;
-}
-
-.complete-btn {
-    width: 600px;
-    height: 40px;
-    background-color: #16DB99;
-    border: none;
-    color: #FFFFFF;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.strip-border {
-    border: #000000 1px solid;
-    margin: 20px auto;
-}
-
-.total-price {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content:space-between;
-}
-
-.payment-container {
+.text-section {
     margin: auto;
+    position: absolute;
+    bottom: 0;
+    top: 20px;
+    left: 20px;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem;
+    color:#fff200f5;
+    line-height: 1.7;
+}
+
+.menu-section {
+    font-family: 'Smythe', cursive;
+    display: none;
+    margin: auto;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    position: fixed;
-    width: 524px;
-    height: 450px;
-    border: none;
-    border-radius: 5px;
-    background-image: url("images/restaurant.jpg");
-    background-position: center; 
-    box-shadow: rgba(53, 51, 51, 0.8) 0 0 60px;
+    width: 65%;
+    height: 350px;
+    background-color: #f6dbb9;
+    border-radius: 10px;
+    min-width: 500px;
 }
 
-.payment-header {
-    padding-top: 40px;
-    padding-left: 70px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    color: #FFFFFF;
+.meal-section {
+    width: 100%;
+    display: none;
+    font-size: 1.2rem;
+    color:#fff200f5;
+    margin: 1em auto 1em 0;
 }
 
-.payment-btn {
-    width: 500px;
-    margin-top: 50px;
-    height: 50px;
-    background-color:#16DB99;
-    border: none;
-    border-radius: 3px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #FFFFFF;
+.meal-ul,
+.drink-ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #f6dbb9;
+    width: 48%;
 }
 
-.close-container-btn {
-    margin: 10px 10px;
-    border: none;
-    background:none;
-    position:absolute;
-    top:0;
-    right:0;
-    color: rgb(208, 255, 0);
-    font-size: 30px;
+.meal-li,
+.drink-li {
+    margin: 0.6em auto;
+    width: 95%;
+}
+
+.meal {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-img-and-info {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.food-name {
+    color: #000000;
+    font-size: 1.3rem;
+}
+
+.food-price {
+    color: #136c5deb;
+    font-size: 1.5rem;
+}
+
+.plus-minus-ul {
+    background-color: #f6dbb9;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50px;
+}
+
+.plus-minus {
+    margin: auto;
+    font-size: 0.9em;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 0.2em;
+    display: flex;
+    justify-content: center;
+}
+
+.plus-minus:hover {
+    color: #ff0000;
+}
+
+.display-menu-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-meal-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-meal-ul,
+.display-drink-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-images {
+    width: 80px;
+    height: 80px;
+}
+
+.basket-section {
+    background-color: #f0f0f0;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.order-section {
+    width: 300px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.basket-ul {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+
+.basket-li {
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+
+.basket-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.plus-minus-btns {
+    font-size: 0.8em;
+    margin-left: 1em;
     cursor: pointer;
 }
 
-.first-message {
-    margin-top: 50px;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-    text-align: center;
+.total-price {
+    text-align: left;
 }
 
-.second-message {
-    margin-top: 20px;
-    color: rgb(138, 255, 206);
-    font-size: 60px;
-    text-align: center;
+.line {
+    width: 100%;
+    border-bottom: 2px solid #393333;
+    margin-top: 1em;
 }
 
-.third-message {
-    margin: 60px auto;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-    text-align: center;
+.total-price-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.final-message {
-    height: 150px;
-    margin: 60px auto;
-    color: #065F46;
-    background-color: antiquewhite;
-    font-size: 45px;
+.complete-order-btn {
+    margin-top: 1em;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.8em;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #c0baad;
+    box-shadow: 0 4px 15px 8px gray;
+}
+
+.footer-links {
+    margin: 0 auto;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.links {
+    display: inline-block;
+    font-size: 2rem;
+    margin-top: 0.5em;
+}
+
+.food-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-list-image {
+    width: 60px;
+    margin-right: 1em;
+}
+
+.card-section {
+    display: none;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("images/pexels-photo-1841108.jpeg");
+    background-size: cover;
+}
+
+.payment-list {
+    padding: 0;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.payment-el {
+    margin: 1em;
+}
+
+.input-el {
+    width: 80%;
+    padding: 0.5em;
+}
+
+.payment-btn {
+    margin-top: 1em;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 1rem;
+    width: 62%;
+    padding: 0.8em;
+}
+
+.blur {
+    filter: blur(8px);
+}
+
+.order-message {
     text-align: center;
 }

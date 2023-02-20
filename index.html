@@ -4,65 +4,115 @@
         <title>Restaurant Ordering App</title>
         <!-- CSS -->
         <link rel="stylesheet" href="index.css">
-        <!-- Font -->
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Rubik Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+        <!-- Smythe Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Restaurant Ordering App">
+        <meta name="keywords" content="Meal, Food, Order">
+        <meta name="author" content="Engin Cobanoglu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
-        <header>
-            <div class="header-picture">
-                <div class="header-text">
-                    <h3>Engin's Diner</h3>
-                    <h4>The best burgers and pizzas in Rotterdam.</h4>
+        <header id="header">
+            <div class="header">
+                <div>
+                    <h1 class="header-text">Engin's Diner</h1>
+                    <span class="header-span">The best street foods in town</span>
+                </div>
+                <i id="nav-bar" class="fa-solid fa-bars nav-bar"></i>
+                <div id="nav-list" class="nav-list">
+                    <nav>
+                        <ul>
+                            <li><button id="meal-list" class="meal-list">Meal</button></li>
+                            <li><button id="drink-list" class="drink-list">Drink</button></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
-        <div class="menu-container" id="menu-container"></div>
-        <div class="hidden order-container" id="order-container">
-            <h2>Your order</h2>
-            <ul id="list-food"></ul>
-            <div class="strip-border"></div>
-                <div class="total-price">
-                    <h6>Total price:</h6>
-                    <h6 id="total-price"></h6>
-                </div>
-                <div class="button-container">
-                    <button class="complete-btn" id="complete-btn">Complete order</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="hidden payment-container" id="payment-container">
-            <i class="fa-sharp fa-solid fa-xmark-large close-container-btn" id="close-container-btn">x</i>
-            <div id="inner-modal">
-                <p class="payment-header">Enter card details</p>
-                <form id="form-payment">
-                    <input type="text"
-                           id="fullName"
-                           name="fullName"
-                           placeholder="Enter your name"
-                           required>
-                    <input type="tel"
-                           id="ccNumber"
-                           name="ccNumber"
-                           inputmode="numeric"
-                           placeholder="Enter card number"
-                           required>
-                    <input type="tel"
-                           id="cvv"
-                           name="cvv"
-                           maxlength="3"
-                           placeholder="Enter CVV"
-                           required>
-                    <div class="button-container">
-                        <input type="submit" class="payment-btn" id="payment-btn" value="Pay">
+        <main id="main">
+            <section>
+                <div class="main">
+                    <div class="image-section"></div>
+                    <h3 id="text-section" class="text-section">Welcome to our restaurant! <br>You can choose meal and drink on top right corner</br></h3>
+                    <div class="menu-section" id="menu-section">
+                        <div id="meal-section" class="meal-section">
+                            <ul id="meal-ul" class="meal-ul">
+                            </ul>
+                            <ul id="drink-ul" class="drink-ul">
+                            </ul>
+                        </div>
                     </div>
-                </form>
+                </div>
+            </section>
+
+            <section>
+                <div id="basket-section" class="basket-section">
+
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="footer">
+                <h1 class="footer-text">Engin's Diner</h1>
+                <span class="footer-span">Follow Us</span>
+                <div class="footer-links">
+                    <i class="fa-brands fa-facebook links"></i>
+                    <i class="fa-brands fa-twitter links"></i>
+                    <i class="fa-brands fa-instagram links"></i>
+                    <i class="fa-brands fa-youtube links"></i>
+                    <i class="fa-solid fa-location-dot links"></i>
+                </div>
             </div>
+        </footer>
+
+        <div id="card-section" class="card-section">
+            <h2>Enter card details</h2>
+            <form id="form-payment">
+                <ul class="payment-list">
+                    <li class="payment-el">
+                        <input class="input-el"
+                               id="card-name"
+                               name="card-name" 
+                               placeholder="Enter your name"
+                               required>
+                    </li>
+                    <li class="payment-el">
+                        <input class="input-el"
+                               type="tel"
+                               inputmode="numeric"
+                               pattern="[0-9\s]{13,19}"
+                               autocomplete="cc-number"
+                               maxlength="19"
+                               id="card-no"
+                               name="card-no"
+                               placeholder="Enter card number"
+                               required>
+                    </li>
+                    <li class="payment-el">
+                        <input class="input-el"
+                               type="tel"
+                               inputmode="numeric"
+                               autocomplete="cc-number"
+                               maxlength="3"
+                               id="cvv"
+                               name="cvv"
+                               placeholder="Enter CVV"
+                               required>
+                    </li>
+                </ul>
+                <button type="submit" id="payment-btn" class="payment-btn">Pay</button>
+            </form>
         </div>
         <script src="index.js" type="module"></script>
     </body>
