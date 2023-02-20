@@ -249,7 +249,7 @@ i:hover {
 .basket-section {
     background-color: #f0f0f0;
     margin: 0 auto;
-    padding: 2em;
+    padding: 5em;
 }
 
 .order-section {
@@ -318,6 +318,9 @@ i:hover {
 }
 
 .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
     text-align: center;
     padding: 1em;
     background-color: #c0baad;
