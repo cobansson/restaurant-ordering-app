@@ -38,12 +38,11 @@ document.addEventListener("click", (e)=> {
 })
 
 function dynamicTotalPrice() {
-    let totalPrice = 0;
     let dynamicPrice = 0;
     for (let i = 0; i < chosenFoodArray.length; i++) {
         dynamicPrice += chosenFoodArray[i].price;
     }
-    return totalPrice = dynamicPrice;
+    return dynamicPrice;
 }
 
 function toggleMenu() {
